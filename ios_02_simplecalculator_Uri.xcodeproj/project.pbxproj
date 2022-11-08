@@ -16,6 +16,7 @@
 		640E923D291AA54700F23A51 /* ios_02_simplecalculator_UriTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640E923C291AA54700F23A51 /* ios_02_simplecalculator_UriTests.swift */; };
 		640E9247291AA54700F23A51 /* ios_02_simplecalculator_UriUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640E9246291AA54700F23A51 /* ios_02_simplecalculator_UriUITests.swift */; };
 		640E9249291AA54700F23A51 /* ios_02_simplecalculator_UriUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640E9248291AA54700F23A51 /* ios_02_simplecalculator_UriUITestsLaunchTests.swift */; };
+		640E9257291AA6FD00F23A51 /* Panel.xib in Resources */ = {isa = PBXBuildFile; fileRef = 640E9256291AA6FD00F23A51 /* Panel.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		640E9242291AA54700F23A51 /* ios_02_simplecalculator_UriUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ios_02_simplecalculator_UriUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		640E9246291AA54700F23A51 /* ios_02_simplecalculator_UriUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ios_02_simplecalculator_UriUITests.swift; sourceTree = "<group>"; };
 		640E9248291AA54700F23A51 /* ios_02_simplecalculator_UriUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ios_02_simplecalculator_UriUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		640E9256291AA6FD00F23A51 /* Panel.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Panel.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 		640E9224291AA54600F23A51 /* ios_02_simplecalculator_Uri */ = {
 			isa = PBXGroup;
 			children = (
+				640E9255291AA6EA00F23A51 /* Views */,
 				640E9225291AA54600F23A51 /* AppDelegate.swift */,
 				640E9227291AA54600F23A51 /* SceneDelegate.swift */,
 				640E9229291AA54600F23A51 /* ViewController.swift */,
@@ -125,6 +128,14 @@
 				640E9248291AA54700F23A51 /* ios_02_simplecalculator_UriUITestsLaunchTests.swift */,
 			);
 			path = ios_02_simplecalculator_UriUITests;
+			sourceTree = "<group>";
+		};
+		640E9255291AA6EA00F23A51 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				640E9256291AA6FD00F23A51 /* Panel.xib */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,6 +244,7 @@
 			files = (
 				640E9232291AA54700F23A51 /* LaunchScreen.storyboard in Resources */,
 				640E922F291AA54700F23A51 /* Assets.xcassets in Resources */,
+				640E9257291AA6FD00F23A51 /* Panel.xib in Resources */,
 				640E922D291AA54600F23A51 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
