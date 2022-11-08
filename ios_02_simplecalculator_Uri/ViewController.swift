@@ -19,34 +19,45 @@ class ViewController: UIViewController {
     @IBOutlet weak var btn9: UIButton!
     @IBOutlet weak var btn8: UIButton!
     @IBOutlet weak var btn7: UIButton!
+    @IBOutlet weak var btnDividir: UIButton!
+    @IBOutlet weak var btnMultiply: UIButton!
     @IBOutlet weak var btnDecimals: UIButton!
     @IBOutlet weak var btnIgual: UIButton!
     @IBOutlet weak var btnMes: UIButton!
     @IBOutlet weak var btnMenos: UIButton!
-    @IBOutlet weak var btnMultiply: UIButton!
-    @IBOutlet weak var btbDividir: UIButton!
+
     @IBOutlet weak var btnTantPercent: UIButton!
     @IBOutlet weak var btnMasMenos: UIButton!
     @IBOutlet weak var lblDisplay: UITextField!
     
     private var display = "0"
-    private var valor1 = "0"
-    private var valor2 = "0"
+    private var valor1: Double?
+    private var valor2: Double?
+    private var result: Double?
+    //var for know if the calculator allready have any value
+    private var statusInit = false
+    private var currentOp = ""
+    private var currentVar = "val1"
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
     
-    @IBAction func ActionDividir(_ sender: Any) {
-    }
-    @IBAction func ActionMultiplicar(_ sender: Any) {
-    }
     @IBAction func ActionRestar(_ sender: Any) {
+        Operacio(op: "-")
     }
     @IBAction func ActionSumar(_ sender: Any) {
+        Operacio(op: "+")
+    }
+    @IBAction func ActionDividir(_ sender: Any) {
+        Operacio(op: "/")
+    }
+    @IBAction func ActionMultiply(_ sender: Any) {
+        Operacio(op: "X")
     }
     @IBAction func ActionIgual(_ sender: Any) {
+        Operacio(op: "=")
     }
     @IBAction func ActionDecimal(_ sender: Any) {
         //Todo: if first add, after 0 and only one
@@ -81,9 +92,9 @@ class ViewController: UIViewController {
     @IBAction func Action0(_ sender: Any) {
         if(CheckDisplay()){
             lblDisplay.text = display + "0"
-            
         }
         display = lblDisplay.text!
+        statusInit = true
     }
     //Check if have the initial value for add or not
     func CheckDisplay () ->Bool{
@@ -96,11 +107,74 @@ class ViewController: UIViewController {
     func AddDisplay(num : String){
         if(CheckDisplay()){
             lblDisplay.text = display + num
-            
         }else{
             lblDisplay.text = num
         }
         display = lblDisplay.text!
+        statusInit = true
+    }
+    fileprivate func CheckIfFirstValue(_ op: String?) {
+        //Case firstOperation
+        if(currentVar == "val1"){
+            valor1=Double(lblDisplay.text!)
+            currentOp = op!
+            currentVar = "val2"
+            display = "0"
+            lblDisplay.text = display
+        }
+    }
+    
+    func Operacio (op:String?){
+        if(statusInit){
+            switch op{
+                case "+":
+                CheckIfFirstValue(op)
+                    break
+                case "-":
+                CheckIfFirstValue(op)
+                    break
+                case "/":
+                CheckIfFirstValue(op)
+                    break
+                case "X":
+                CheckIfFirstValue(op)
+                    break
+                case "=":
+                //Todo o switch o captuturar el tipus d'operacio
+                    valor2=Double(lblDisplay.text!)
+                    result = Double(Operar(op: currentOp))
+                    lblDisplay.text = String(result!)
+                    currentVar = "var1"
+                    break
+                default:
+                    break
+            }
+        }else{
+            //Todo: Alert no value
+            print("No initial value")
+        }
+    }
+    func Operar(op:String)->String{
+        print(valor1)
+        print(op)
+        print(valor2)
+        switch op{
+            case "+":
+            result = valor1! + valor2!
+                break
+            case "-":
+            result = valor1! - valor2!
+                break
+            case "/":
+            result = valor1! / valor2!
+                break
+            case "X":
+            result = valor1! * valor2!
+                break
+            default:
+                break
+        }
+        return String(result!)
     }
 }
 

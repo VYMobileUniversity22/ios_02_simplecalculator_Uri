@@ -38,7 +38,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="/"/>
                                 <connections>
-                                    <action selector="acttionDividir:" destination="BYZ-38-t0r" eventType="touchUpInside" id="y5x-EE-aKu"/>
+                                    <action selector="ActionDividir:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CY4-sr-Oee"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GlD-iP-Dsd">
@@ -78,7 +78,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="X"/>
                                 <connections>
-                                    <action selector="actionMultiplicar:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hq5-YR-Vxm"/>
+                                    <action selector="ActionMultiply:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yBh-Pa-m7G"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AlK-vT-do6">
@@ -214,7 +214,6 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="btbDividir" destination="4NH-ou-04P" id="taR-iY-lEZ"/>
                         <outlet property="btn0" destination="hZl-ir-iqt" id="XMQ-3Q-6iq"/>
                         <outlet property="btn1" destination="xeR-Mx-edT" id="LuP-lY-LrL"/>
                         <outlet property="btn2" destination="JSy-g8-xoo" id="V3c-Tm-vK9"/>
@@ -226,11 +225,12 @@
                         <outlet property="btn8" destination="yF2-lR-Mza" id="6tc-Xx-wJr"/>
                         <outlet property="btn9" destination="Q9W-dL-3Y2" id="vkM-PT-K3J"/>
                         <outlet property="btnDecimals" destination="IU1-V9-Ocf" id="Lmt-tK-kmb"/>
+                        <outlet property="btnDividir" destination="4NH-ou-04P" id="z2h-81-Cbc"/>
                         <outlet property="btnIgual" destination="oHw-mC-DCA" id="lvI-mU-oYH"/>
                         <outlet property="btnMasMenos" destination="FSb-qC-yy0" id="v7K-8a-dwr"/>
                         <outlet property="btnMenos" destination="tsx-qn-2ej" id="MAn-2W-o8V"/>
                         <outlet property="btnMes" destination="CdQ-rM-exq" id="xVb-HK-qHx"/>
-                        <outlet property="btnMultiply" destination="tsx-qn-2ej" id="0Gv-rY-Oby"/>
+                        <outlet property="btnMultiply" destination="fwJ-6G-nDD" id="foS-id-8Ax"/>
                         <outlet property="btnTantPercent" destination="EwW-hF-TjP" id="Q6Z-9I-LdT"/>
                         <outlet property="lblDisplay" destination="L5a-1B-Wab" id="LXI-h0-Gdb"/>
                     </connections>
