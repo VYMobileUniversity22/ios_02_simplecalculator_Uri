@@ -25,7 +25,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var btnIgual: UIButton!
     @IBOutlet weak var btnMes: UIButton!
     @IBOutlet weak var btnMenos: UIButton!
-
+    @IBOutlet weak var btnAC: UIButton!
+    
     @IBOutlet weak var btnTantPercent: UIButton!
     @IBOutlet weak var btnMasMenos: UIButton!
     @IBOutlet weak var lblDisplay: UITextField!
@@ -44,6 +45,9 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    @IBAction func ActionAC(_ sender: Any) {
+        CleanAll()
+    }
     @IBAction func ActionRestar(_ sender: Any) {
         Operacio(op: "-")
     }
@@ -60,7 +64,15 @@ class ViewController: UIViewController {
         Operacio(op: "=")
     }
     @IBAction func ActionDecimal(_ sender: Any) {
-        //Todo: if first add, after 0 and only one
+        if(!CheckDisplay()){
+            lblDisplay.text = "0."
+            display = "0."
+        }else if(!(lblDisplay.text?.contains("."))!){
+            lblDisplay.text = display + "."
+            display = lblDisplay.text!
+        }
+//        print(lblDisplay.text?.contains("."))
+        
     }
     @IBAction func Action7(_ sender: Any) {
         AddDisplay(num: "7")
@@ -144,7 +156,11 @@ class ViewController: UIViewController {
                     valor2=Double(lblDisplay.text!)
                     result = Double(Operar(op: currentOp))
                     lblDisplay.text = String(result!)
+                    CleanAll()
                     currentVar = "var1"
+                    print("Valor1 \(valor1)")
+                    print("Valor2 \(valor2)")
+                    print("Display \(display)")
                     break
                 default:
                     break
@@ -155,9 +171,7 @@ class ViewController: UIViewController {
         }
     }
     func Operar(op:String)->String{
-        print(valor1)
-        print(op)
-        print(valor2)
+
         switch op{
             case "+":
             result = valor1! + valor2!
@@ -175,6 +189,14 @@ class ViewController: UIViewController {
                 break
         }
         return String(result!)
+    }
+    fileprivate func CleanAll() {
+        display = "0"
+        lblDisplay.text = ""
+        valor1 = 0.0
+        valor2 = 0.0
+        result = 0.0
+        currentVar = "var1"
     }
 }
 

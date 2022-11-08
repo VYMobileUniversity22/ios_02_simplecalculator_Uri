@@ -204,6 +204,9 @@
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="AC"/>
+                                <connections>
+                                    <action selector="ActionAC:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CBw-jf-vft"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -224,6 +227,7 @@
                         <outlet property="btn7" destination="GlD-iP-Dsd" id="4dU-ZC-Ocw"/>
                         <outlet property="btn8" destination="yF2-lR-Mza" id="6tc-Xx-wJr"/>
                         <outlet property="btn9" destination="Q9W-dL-3Y2" id="vkM-PT-K3J"/>
+                        <outlet property="btnAC" destination="2qE-mI-6VZ" id="ZKM-q6-Iuc"/>
                         <outlet property="btnDecimals" destination="IU1-V9-Ocf" id="Lmt-tK-kmb"/>
                         <outlet property="btnDividir" destination="4NH-ou-04P" id="z2h-81-Cbc"/>
                         <outlet property="btnIgual" destination="oHw-mC-DCA" id="lvI-mU-oYH"/>
