@@ -71,8 +71,6 @@ class ViewController: UIViewController {
             lblDisplay.text = display + "."
             display = lblDisplay.text!
         }
-//        print(lblDisplay.text?.contains("."))
-        
     }
     @IBAction func Action7(_ sender: Any) {
         AddDisplay(num: "7")
@@ -118,6 +116,7 @@ class ViewController: UIViewController {
     }
     func AddDisplay(num : String){
         if(CheckDisplay()){
+            //adding previous value of display to label
             lblDisplay.text = display + num
         }else{
             lblDisplay.text = num
@@ -128,11 +127,16 @@ class ViewController: UIViewController {
     fileprivate func CheckIfFirstValue(_ op: String?) {
         //Case firstOperation
         if(currentVar == "val1"){
-            valor1=Double(lblDisplay.text!)
+            valor1 = Double(lblDisplay.text!)
             currentOp = op!
             currentVar = "val2"
             display = "0"
             lblDisplay.text = display
+        }else{ //if val2
+//            valor2 = Double(lblDisplay.text!)
+//            lblDisplay.text = Operar(op: currentOp)
+//            result = Double (Operar(op: currentOp))
+//            valor2 = nil
         }
     }
     
@@ -156,11 +160,8 @@ class ViewController: UIViewController {
                     valor2=Double(lblDisplay.text!)
                     result = Double(Operar(op: currentOp))
                     lblDisplay.text = String(result!)
-                    CleanAll()
+                    //CleanAll()
                     currentVar = "var1"
-                    print("Valor1 \(valor1)")
-                    print("Valor2 \(valor2)")
-                    print("Display \(display)")
                     break
                 default:
                     break
@@ -174,7 +175,7 @@ class ViewController: UIViewController {
 
         switch op{
             case "+":
-            result = valor1! + valor2!
+            result = valor1 + valor2!
                 break
             case "-":
             result = valor1! - valor2!
