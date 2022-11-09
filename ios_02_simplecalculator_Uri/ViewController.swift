@@ -175,7 +175,7 @@ class ViewController: UIViewController {
 
         switch op{
             case "+":
-            result = valor1 + valor2!
+            result = valor1! + valor2!
                 break
             case "-":
             result = valor1! - valor2!
