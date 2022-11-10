@@ -5,7 +5,8 @@ Simple Calculator
 
 Estructure Interface:
 
-<img width="324" alt="Estructure" src="https://user-images.githubusercontent.com/117266660/201016902-6d8258ef-8827-40e0-8f7e-a1c65f712f73.png">
+![Estructure](https://user-images.githubusercontent.com/117266660/201026779-b417cb70-e376-482f-b734-898f170dc95c.png)
+
 
 Interface:
 
