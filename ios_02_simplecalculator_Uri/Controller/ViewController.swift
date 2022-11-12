@@ -40,9 +40,12 @@ class ViewController: UIViewController {
     private var currentOp = ""
     private var currentVar = "val1"
     
+    let defaults = UserDefaults.standard
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        btnDecimals.isHidden = defaults.bool(forKey: "decimalsEnabled")     //Hide decimal button by user settings
+        lblDisplay.text = defaults.string(forKey: "LastResult")             //Display last results
     }
     
     @IBAction func ActionAC(_ sender: Any) {
@@ -159,6 +162,7 @@ class ViewController: UIViewController {
                 //Todo o switch o captuturar el tipus d'operacio
                     valor2=Double(lblDisplay.text!)
                     result = Double(Operar(op: currentOp))
+                    defaults.set(result, forKey: "LastResult") //Saving last result
                     lblDisplay.text = String(result!)
                     //CleanAll()
                     currentVar = "var1"
