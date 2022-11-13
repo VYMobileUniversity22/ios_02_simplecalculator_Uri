@@ -15,7 +15,7 @@ enum operaciones: String{
     case division = "/"
     case none = "none"
 }
-var currentOp = CurrentOperation()
+var currentOp = COperation()
 
 //Fuction for check if display its 0
 func CheckDisplayCero (display: UILabel) ->Bool{

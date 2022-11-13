@@ -7,15 +7,7 @@
 
 import Foundation
 
-class CurrentOperation {
-//    enum operaciones: String{
-//        case suma = "+"
-//        case resta = "-"
-//        case multiplicacion = "*"
-//        case division = "/"
-//        case none = "none"
-//    }
-    
+class COperation {    
     var num1: Int?
     var num2: Int?
     var operato: String = ""
