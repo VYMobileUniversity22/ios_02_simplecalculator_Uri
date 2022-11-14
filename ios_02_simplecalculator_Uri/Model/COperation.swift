@@ -15,6 +15,7 @@ class COperation {
     var num2: Int?
     var operato: String = ""
     var result: Int?
+    var classDisplay = CDisplay()
 
     //Set the operation to beginning
     func CleanOperator() {
@@ -25,9 +26,9 @@ class COperation {
     //Funtion for the first state of display
     func CheckIniDisplay(display: UITextField, btnPress: UIButton) {
         if display.text == "0" {
-            BtnPressed(btnPres: btnPress, isNill: true, display: display)
+            classDisplay.BtnPressed(btnPres: btnPress, isNill: true, display: display)
         } else {
-            BtnPressed(btnPres: btnPress, isNill: false, display: display)
+            classDisplay.BtnPressed(btnPres: btnPress, isNill: false, display: display)
         }
     }
     //TODO: Use variables of the class
