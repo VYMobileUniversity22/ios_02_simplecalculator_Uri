@@ -18,9 +18,9 @@ class COperation {
 
     //Set the operation to beginning
     func CleanOperator() {
-        currentOp.operato = ""
-        currentOp.num1 = nil
-        currentOp.num2 = nil
+        operato = ""
+        num1 = nil
+        num2 = nil
     }
     //Funtion for the first state of display
     func CheckIniDisplay(display: UITextField, btnPress: UIButton) {
@@ -35,60 +35,60 @@ class COperation {
     func ExecOperation(display: UITextField) {
         var value1 = 0
         var value2 = 0
-        let operacion = currentOp.operato
+        let operacion = operato
 
         //Setea el segundo valor
         SetSecondValue(display, &value1, &value2)
 
         switch operacion {
         case "+":
-            currentOp.result = value1 + value2
-            guard let result = currentOp.result else { return }
+            result = value1 + value2
+            guard let result = result else { return }
             display.text = String(result)
-            currentOp.CleanOperator()
+            CleanOperator()
             break
         case "-":
-            currentOp.result = value1 - value2
-            guard let result = currentOp.result else { return }
+            result = value1 - value2
+            guard let result = result else { return }
             display.text = String(result)
-            currentOp.CleanOperator()
+            CleanOperator()
             break
         case "/":
-            currentOp.result = value1 / value2
-            guard let result = currentOp.result else { return }
+            result = value1 / value2
+            guard let result = result else { return }
             display.text = String(result)
-            currentOp.CleanOperator()
+            CleanOperator()
             break
         case "*":
-            currentOp.result = value1 * value2
-            guard let result = currentOp.result else { return }
+            result = value1 * value2
+            guard let result = result else { return }
             display.text = String(result)
-            currentOp.CleanOperator()
+            CleanOperator()
 
             break
         default:
             break
         }
     }
-    //TODO: Use variables of the class
+
     //If there is an value 1 set the operation parameter
     func SetPosValue(display: UITextField, op: operaciones) {
         guard let dis = display.text else { return }
 
-        if currentOp.operato == "" {
-            if currentOp.num1 == nil {
-                currentOp.num1 = Int(dis)
-                currentOp.operato = op.rawValue
+        if operato == "" {
+            if num1 == nil {
+                num1 = Int(dis)
+                operato = op.rawValue
                 display.text = "0"
             }
         }
     }
-    //TODO: Use variables of the class
+
     //if there is a current operation set the second value
     func SetSecondValue(_ display: UITextField, _ value1: inout Int, _ value2: inout Int) {
-        if currentOp.operato != "" {
+        if operato != "" {
             guard let disp = display.text,
-                let num1 = currentOp.num1
+                let num1 = num1
                 else { return }
             let num2 = Int(disp) ?? 0
             value1 = num1
