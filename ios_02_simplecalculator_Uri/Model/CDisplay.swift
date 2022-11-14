@@ -16,5 +16,26 @@ class CDisplay{
             return true
         }
     }
-    
+    func ReturnValue(isNill: Bool, value: String, display: UITextField) {
+        if isNill {
+            display.text = value
+        } else {
+            display.text = (display.text ?? "") + value
+
+        }
+    }
+    func DisContainDot(display: UITextField) -> Bool {
+        guard let dis = display.text else {
+            return true
+        }
+        if dis.contains(".") {
+            return true
+        } else {
+            return false
+        }
+    }
+    func CleanDisplay(display: UITextField){
+        guard display.text != nil else { return }
+        display.text = "0"
+    }
 }

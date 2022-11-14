@@ -83,28 +83,16 @@ import UIKit
 //}
 //TODO: CLASS DisplayFuntions
 //Funtion to set the display value checking if have previous value
-func ReturnValue(isNill: Bool, value: String, display: UITextField) {
-    if isNill {
-        display.text = value
-    } else {
-        display.text = (display.text ?? "") + value
-
-    }
-}
+//func ReturnValue(isNill: Bool, value: String, display: UITextField) {
+//    if isNill {
+//        display.text = value
+//    } else {
+//        display.text = (display.text ?? "") + value
+//
+//    }
+//}
 //TODO: CLASS DisplayFuntions
 //Function to check if display have dot
-func DisContainDot(display: UITextField) -> Bool {
-    guard let dis = display.text else {
-        return true
-    }
-    if dis.contains(".") {
-        return true
-    } else {
-        return false
-    }
-}
+
 //TODO: CLASS DisplayFuntions
-func CleanDisplay(display: UITextField){
-    guard display.text != nil else { return }
-    display.text = "0"
-}
+

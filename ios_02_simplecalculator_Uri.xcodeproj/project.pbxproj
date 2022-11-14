@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		64096CD8291D0D4900B19734 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 64096CD7291D0D4900B19734 /* Settings.bundle */; };
-		64096E70291FE10C00B19734 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64096E6F291FE10C00B19734 /* Functions.swift */; };
 		64096E7229200B2800B19734 /* COperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64096E7129200B2800B19734 /* COperation.swift */; };
 		640E9226291AA54600F23A51 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640E9225291AA54600F23A51 /* AppDelegate.swift */; };
 		640E9228291AA54600F23A51 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640E9227291AA54600F23A51 /* SceneDelegate.swift */; };
@@ -41,7 +40,6 @@
 
 /* Begin PBXFileReference section */
 		64096CD7291D0D4900B19734 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
-		64096E6F291FE10C00B19734 /* Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
 		64096E7129200B2800B19734 /* COperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = COperation.swift; sourceTree = "<group>"; };
 		640E9222291AA54600F23A51 /* ios_02_simplecalculator_Uri.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ios_02_simplecalculator_Uri.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		640E9225291AA54600F23A51 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -87,7 +85,6 @@
 		64096E6D291FD8AA00B19734 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				64096E6F291FE10C00B19734 /* Functions.swift */,
 				64096E7129200B2800B19734 /* COperation.swift */,
 				64C7FD092922B38E00AAA6C6 /* CDisplay.swift */,
 			);
@@ -300,7 +297,6 @@
 				640E9228291AA54600F23A51 /* SceneDelegate.swift in Sources */,
 				64096E7229200B2800B19734 /* COperation.swift in Sources */,
 				64C7FD0A2922B38E00AAA6C6 /* CDisplay.swift in Sources */,
-				64096E70291FE10C00B19734 /* Functions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

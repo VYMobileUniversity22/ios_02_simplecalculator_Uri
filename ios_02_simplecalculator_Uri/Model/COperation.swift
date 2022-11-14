@@ -22,6 +22,7 @@ class COperation {
     var num2: Int?
     var operato: String = ""
     var result: Int?
+    var cdisplay = CDisplay()
 
     //Set the operation to beginning
     func CleanOperator() {
@@ -108,38 +109,38 @@ class COperation {
         let btn = btnPres.tag
         switch btn {
         case 0:
-            ReturnValue(isNill: isNill, value: "0", display: display)
+            cdisplay.ReturnValue(isNill: isNill, value: "0", display: display)
             break;
         case 1:
-            ReturnValue(isNill: isNill, value: "1", display: display)
+            cdisplay.ReturnValue(isNill: isNill, value: "1", display: display)
             break;
         case 2:
-            ReturnValue(isNill: isNill, value: "2", display: display)
+            cdisplay.ReturnValue(isNill: isNill, value: "2", display: display)
             break;
         case 3:
-            ReturnValue(isNill: isNill, value: "3", display: display)
+            cdisplay.ReturnValue(isNill: isNill, value: "3", display: display)
             break;
         case 4:
-            ReturnValue(isNill: isNill, value: "4", display: display)
+            cdisplay.ReturnValue(isNill: isNill, value: "4", display: display)
             break;
         case 5:
-            ReturnValue(isNill: isNill, value: "5", display: display)
+            cdisplay.ReturnValue(isNill: isNill, value: "5", display: display)
             break;
         case 6:
-            ReturnValue(isNill: isNill, value: "6", display: display)
+            cdisplay.ReturnValue(isNill: isNill, value: "6", display: display)
             break;
         case 7:
-            ReturnValue(isNill: isNill, value: "7", display: display)
+            cdisplay.ReturnValue(isNill: isNill, value: "7", display: display)
             break;
         case 8:
-            ReturnValue(isNill: isNill, value: "8", display: display)
+            cdisplay.ReturnValue(isNill: isNill, value: "8", display: display)
             break;
         case 9:
-            ReturnValue(isNill: isNill, value: "9", display: display)
+            cdisplay.ReturnValue(isNill: isNill, value: "9", display: display)
             break;
         case 10: // AC
             CleanOperator()
-            CleanDisplay(display: display)
+            cdisplay.CleanDisplay(display: display)
             break;
         case 11: // +-
             // Not implemented
@@ -164,8 +165,8 @@ class COperation {
             //ExecOperation(display: display)
             break;
         case 18: // .
-            if !DisContainDot(display: display) {
-                ReturnValue(isNill: isNill, value: "0.", display: display)
+            if !cdisplay.DisContainDot(display: display) {
+                cdisplay.ReturnValue(isNill: isNill, value: "0.", display: display)
             }
             break;
         default:
