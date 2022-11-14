@@ -18,7 +18,7 @@ enum operaciones: String {
     case division = "/"
     case none = "none"
 }
-//var currentOp = COperation()
+var currentOp = COperation()
 
 //TODO: CLASS COperation
 ////If there is an value 1 set the operation parameter

@@ -19,7 +19,6 @@
 		640E923D291AA54700F23A51 /* ios_02_simplecalculator_UriTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640E923C291AA54700F23A51 /* ios_02_simplecalculator_UriTests.swift */; };
 		640E9247291AA54700F23A51 /* ios_02_simplecalculator_UriUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640E9246291AA54700F23A51 /* ios_02_simplecalculator_UriUITests.swift */; };
 		640E9249291AA54700F23A51 /* ios_02_simplecalculator_UriUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640E9248291AA54700F23A51 /* ios_02_simplecalculator_UriUITestsLaunchTests.swift */; };
-		64FDBAEC2922A1CE004EA600 /* CDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FDBAEB2922A1CE004EA600 /* CDisplay.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,7 +55,6 @@
 		640E9242291AA54700F23A51 /* ios_02_simplecalculator_UriUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ios_02_simplecalculator_UriUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		640E9246291AA54700F23A51 /* ios_02_simplecalculator_UriUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ios_02_simplecalculator_UriUITests.swift; sourceTree = "<group>"; };
 		640E9248291AA54700F23A51 /* ios_02_simplecalculator_UriUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ios_02_simplecalculator_UriUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		64FDBAEB2922A1CE004EA600 /* CDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDisplay.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,7 +87,6 @@
 			children = (
 				64096E6F291FE10C00B19734 /* Functions.swift */,
 				64096E7129200B2800B19734 /* COperation.swift */,
-				64FDBAEB2922A1CE004EA600 /* CDisplay.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -299,7 +296,6 @@
 				640E9226291AA54600F23A51 /* AppDelegate.swift in Sources */,
 				640E9228291AA54600F23A51 /* SceneDelegate.swift in Sources */,
 				64096E7229200B2800B19734 /* COperation.swift in Sources */,
-				64FDBAEC2922A1CE004EA600 /* CDisplay.swift in Sources */,
 				64096E70291FE10C00B19734 /* Functions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
