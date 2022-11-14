@@ -8,61 +8,9 @@
 import Foundation
 import UIKit
 
-// NEW
-    var operation = COperation()
-//
-enum operaciones: String {
-    case suma = "+"
-    case resta = "-"
-    case multiplicacion = "*"
-    case division = "/"
-    case none = "none"
-}
+var operation = COperation()
 var currentOp = COperation()
 
-//TODO: CLASS COperation
-////If there is an value 1 set the operation parameter
-//func SetPosValue(display: UITextField, op: operaciones) {
-//    guard let dis = display.text else { return }
-//
-//    if currentOp.operato == "" {
-//        if currentOp.num1 == nil {
-//            currentOp.num1 = Int(dis)
-//            currentOp.operato = op.rawValue
-//            display.text = "0"
-//        }
-//    }
-//}
-////TODO: CLASS COperation
-////if there is a current operation set the second value
-//func SetSecondValue(_ display: UITextField, _ value1: inout Int, _ value2: inout Int) {
-//    if currentOp.operato != "" {
-//        guard let disp = display.text,
-//            let num1 = currentOp.num1
-//            else { return }
-//        let num2 = Int(disp) ?? 0
-//        value1 = num1
-//        value2 = num2
-//    }
-//}
-
-//TODO: CLASS DisplayFuntions
-//Fuction for check if display its 0
-//func CheckDisplayCero (display: UILabel) -> Bool {
-//    if(display.text == "0") {
-//        return false
-//    } else {
-//        return true
-//    }
-//}
-//Funtion for the first state of display
-//func CheckIniDisplay(display: UITextField, btnPress: UIButton) {
-//    if display.text == "0" {
-//        BtnPressed(btnPres: btnPress, isNill: true, display: display)
-//    } else {
-//        BtnPressed(btnPres: btnPress, isNill: false, display: display)
-//    }
-//}
 //TODO: CLASS DisplayFuntions
 func BtnPressed(btnPres: UIButton, isNill: Bool, display: UITextField) {
     let btn = btnPres.tag
@@ -159,57 +107,3 @@ func CleanDisplay(display: UITextField){
     guard display.text != nil else { return }
     display.text = "0"
 }
-
-
-//func ExecOperation(display: UITextField) {
-//    var value1 = 0
-//    var value2 = 0
-//    let operacion = currentOp.operato
-//
-//    //Setea el segundo valor
-//    SetSecondValue(display, &value1, &value2)
-//
-//    switch operacion {
-//    case "+":
-//        currentOp.result = value1 + value2
-//        guard let result = currentOp.result else { return }
-//        display.text = String(result)
-//        currentOp.ResetOperation()
-//        break
-//    case "-":
-//        currentOp.result = value1 - value2
-//        guard let result = currentOp.result else { return }
-//        display.text = String(result)
-//        currentOp.ResetOperation()
-//        break
-//    case "/":
-//        currentOp.result = value1 / value2
-//        guard let result = currentOp.result else { return }
-//        display.text = String(result)
-//        currentOp.ResetOperation()
-//        break
-//    case "*":
-//        currentOp.result = value1 * value2
-//        guard let result = currentOp.result else { return }
-//        display.text = String(result)
-//        currentOp.ResetOperation()
-//
-//        break
-//    default:
-//        break
-//    }
-//}
-//func CleanOperator(){
-//    currentOp.operato = ""
-//    currentOp.num1 = nil
-//    currentOp.num2 = nil
-//}
-
-//Set all to Cero
-//func CleanAll(display: UITextField) {
-//    guard display.text != nil else { return }
-//    display.text = "0"
-//    currentOp.operato = ""
-//    currentOp.num1 = nil
-//    currentOp.num2 = nil
-//}
