@@ -11,11 +11,11 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var lblDisplay: UITextField!
 
-    //var for know if the calculator allready have any value
-    let defaults = UserDefaults.standard
-
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    @IBAction func btnPress(_ sender: UIButton) {
+        CheckIniDisplay(display: lblDisplay, btnPress: sender)
     }
 }
 

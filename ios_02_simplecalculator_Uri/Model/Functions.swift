@@ -89,7 +89,6 @@ func BtnPressed(btnPres: UIButton, isNill: Bool, display: UITextField) {
         setPosValue(display: display, op: .suma)
         break;
     case 17: // =
-
         ExecOperation(display: display)
         break;
     case 18: // .
@@ -179,7 +178,7 @@ func setPosValue(display: UITextField, op: operaciones) {
     }
 }
 func CleanAll(display: UITextField) {
-    guard let dis = display.text else { return }
+    guard display.text != nil else { return }
     display.text = "0"
     currentOp.operato = ""
     currentOp.num1 = nil
