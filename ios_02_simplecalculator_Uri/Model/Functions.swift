@@ -20,6 +20,33 @@ enum operaciones: String {
 }
 var currentOp = COperation()
 
+//TODO: CLASS COperation
+////If there is an value 1 set the operation parameter
+//func SetPosValue(display: UITextField, op: operaciones) {
+//    guard let dis = display.text else { return }
+//
+//    if currentOp.operato == "" {
+//        if currentOp.num1 == nil {
+//            currentOp.num1 = Int(dis)
+//            currentOp.operato = op.rawValue
+//            display.text = "0"
+//        }
+//    }
+//}
+////TODO: CLASS COperation
+////if there is a current operation set the second value
+//func SetSecondValue(_ display: UITextField, _ value1: inout Int, _ value2: inout Int) {
+//    if currentOp.operato != "" {
+//        guard let disp = display.text,
+//            let num1 = currentOp.num1
+//            else { return }
+//        let num2 = Int(disp) ?? 0
+//        value1 = num1
+//        value2 = num2
+//    }
+//}
+
+//TODO: CLASS DisplayFuntions
 //Fuction for check if display its 0
 func CheckDisplayCero (display: UILabel) -> Bool {
     if(display.text == "0") {
@@ -36,7 +63,7 @@ func CheckDisplayCero (display: UILabel) -> Bool {
 //        BtnPressed(btnPres: btnPress, isNill: false, display: display)
 //    }
 //}
-
+//TODO: CLASS DisplayFuntions
 func BtnPressed(btnPres: UIButton, isNill: Bool, display: UITextField) {
     let btn = btnPres.tag
     switch btn {
@@ -81,16 +108,16 @@ func BtnPressed(btnPres: UIButton, isNill: Bool, display: UITextField) {
         // Not implemented
         break;
     case 13: // /
-        SetPosValue(display: display, op: .division)
+        operation.SetPosValue(display: display, op: .division)
         break;
     case 14: //x
-        SetPosValue(display: display, op: .multiplicacion)
+        operation.SetPosValue(display: display, op: .multiplicacion)
         break;
     case 15: // -
-        SetPosValue(display: display, op: .resta)
+        operation.SetPosValue(display: display, op: .resta)
         break;
     case 16: // +
-        SetPosValue(display: display, op: .suma)
+        operation.SetPosValue(display: display, op: .suma)
         break;
     case 17: // =
         operation.ExecOperation(display: display)
@@ -105,7 +132,7 @@ func BtnPressed(btnPres: UIButton, isNill: Bool, display: UITextField) {
         break;
     }
 }
-//TODO: CLASS Display
+//TODO: CLASS DisplayFuntions
 //Funtion to set the display value checking if have previous value
 func ReturnValue(isNill: Bool, value: String, display: UITextField) {
     if isNill {
@@ -115,7 +142,7 @@ func ReturnValue(isNill: Bool, value: String, display: UITextField) {
 
     }
 }
-//TODO: CLASS Display
+//TODO: CLASS DisplayFuntions
 //Function to check if display have dot
 func DisContainDot(display: UITextField) -> Bool {
     guard let dis = display.text else {
@@ -127,29 +154,12 @@ func DisContainDot(display: UITextField) -> Bool {
         return false
     }
 }
-//If there is an value 1 set the operation parameter
-func SetPosValue(display: UITextField, op: operaciones) {
-    guard let dis = display.text else { return }
+//TODO: CLASS DisplayFuntions
+func CleanDisplay(display: UITextField){
+    guard display.text != nil else { return }
+    display.text = "0"
+}
 
-    if currentOp.operato == "" {
-        if currentOp.num1 == nil {
-            currentOp.num1 = Int(dis)
-            currentOp.operato = op.rawValue
-            display.text = "0"
-        }
-    }
-}
-//if there is a current operation set the second value
-func SetSecondValue(_ display: UITextField, _ value1: inout Int, _ value2: inout Int) {
-    if currentOp.operato != "" {
-        guard let disp = display.text,
-            let num1 = currentOp.num1
-            else { return }
-        let num2 = Int(disp) ?? 0
-        value1 = num1
-        value2 = num2
-    }
-}
 
 //func ExecOperation(display: UITextField) {
 //    var value1 = 0
@@ -194,10 +204,7 @@ func SetSecondValue(_ display: UITextField, _ value1: inout Int, _ value2: inout
 //    currentOp.num1 = nil
 //    currentOp.num2 = nil
 //}
-func CleanDisplay(display: UITextField){
-    guard display.text != nil else { return }
-    display.text = "0"
-}
+
 //Set all to Cero
 //func CleanAll(display: UITextField) {
 //    guard display.text != nil else { return }

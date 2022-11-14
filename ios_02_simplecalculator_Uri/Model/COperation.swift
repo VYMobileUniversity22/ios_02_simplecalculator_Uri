@@ -8,15 +8,16 @@
 import Foundation
 import UIKit
 
-//USE SINGLETON???????????????????????????
+//TODO: USE SINGLETON???????????????????????????
+//TODO: ADD ENUMS
 class COperation {
     var num1: Int?
     var num2: Int?
     var operato: String = ""
     var result: Int?
-    
+
     //Set the operation to beginning
-    func CleanOperator(){
+    func CleanOperator() {
         currentOp.operato = ""
         currentOp.num1 = nil
         currentOp.num2 = nil
@@ -29,6 +30,7 @@ class COperation {
             BtnPressed(btnPres: btnPress, isNill: false, display: display)
         }
     }
+    //TODO: Use variables of the class
     //Execute the operation
     func ExecOperation(display: UITextField) {
         var value1 = 0
@@ -66,6 +68,31 @@ class COperation {
             break
         default:
             break
+        }
+    }
+    //TODO: Use variables of the class
+    //If there is an value 1 set the operation parameter
+    func SetPosValue(display: UITextField, op: operaciones) {
+        guard let dis = display.text else { return }
+
+        if currentOp.operato == "" {
+            if currentOp.num1 == nil {
+                currentOp.num1 = Int(dis)
+                currentOp.operato = op.rawValue
+                display.text = "0"
+            }
+        }
+    }
+    //TODO: Use variables of the class
+    //if there is a current operation set the second value
+    func SetSecondValue(_ display: UITextField, _ value1: inout Int, _ value2: inout Int) {
+        if currentOp.operato != "" {
+            guard let disp = display.text,
+                let num1 = currentOp.num1
+                else { return }
+            let num2 = Int(disp) ?? 0
+            value1 = num1
+            value2 = num2
         }
     }
 }
