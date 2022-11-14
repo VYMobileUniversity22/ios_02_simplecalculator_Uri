@@ -48,13 +48,13 @@ var currentOp = COperation()
 
 //TODO: CLASS DisplayFuntions
 //Fuction for check if display its 0
-func CheckDisplayCero (display: UILabel) -> Bool {
-    if(display.text == "0") {
-        return false
-    } else {
-        return true
-    }
-}
+//func CheckDisplayCero (display: UILabel) -> Bool {
+//    if(display.text == "0") {
+//        return false
+//    } else {
+//        return true
+//    }
+//}
 //Funtion for the first state of display
 //func CheckIniDisplay(display: UITextField, btnPress: UIButton) {
 //    if display.text == "0" {
