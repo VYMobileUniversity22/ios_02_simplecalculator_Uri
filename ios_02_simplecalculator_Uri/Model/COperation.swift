@@ -25,9 +25,9 @@ class COperation {
 
     //Set the operation to beginning
     func CleanOperator() {
-        currentOp.operato = ""
-        currentOp.num1 = nil
-        currentOp.num2 = nil
+        operato = ""
+        num1 = nil
+        num2 = nil
     }
     //Funtion for the first state of display
     func CheckIniDisplay(display: UITextField, btnPress: UIButton) {
@@ -42,35 +42,35 @@ class COperation {
     func ExecOperation(display: UITextField) {
         var value1 = 0
         var value2 = 0
-        let operacion = currentOp.operato
+        let operacion = operato
 
         //Setea el segundo valor
         SetSecondValue(display, &value1, &value2)
 
         switch operacion {
         case "+":
-            currentOp.result = value1 + value2
-            guard let result = currentOp.result else { return }
+            result = value1 + value2
+            guard let result = result else { return }
             display.text = String(result)
-            currentOp.CleanOperator()
+            CleanOperator()
             break
         case "-":
-            currentOp.result = value1 - value2
-            guard let result = currentOp.result else { return }
+            result = value1 - value2
+            guard let result = result else { return }
             display.text = String(result)
-            currentOp.CleanOperator()
+            CleanOperator()
             break
         case "/":
-            currentOp.result = value1 / value2
-            guard let result = currentOp.result else { return }
+            result = value1 / value2
+            guard let result = result else { return }
             display.text = String(result)
-            currentOp.CleanOperator()
+            CleanOperator()
             break
         case "*":
-            currentOp.result = value1 * value2
-            guard let result = currentOp.result else { return }
+            result = value1 * value2
+            guard let result = result else { return }
             display.text = String(result)
-            currentOp.CleanOperator()
+            CleanOperator()
 
             break
         default:
@@ -82,10 +82,10 @@ class COperation {
     func SetPosValue(display: UITextField, op: operaciones) {
         guard let dis = display.text else { return }
 
-        if currentOp.operato == "" {
-            if currentOp.num1 == nil {
-                currentOp.num1 = Int(dis)
-                currentOp.operato = op.rawValue
+        if operato == "" {
+            if num1 == nil {
+                num1 = Int(dis)
+                operato = op.rawValue
                 display.text = "0"
             }
         }
@@ -93,13 +93,83 @@ class COperation {
     //TODO: Use variables of the class
     //if there is a current operation set the second value
     func SetSecondValue(_ display: UITextField, _ value1: inout Int, _ value2: inout Int) {
-        if currentOp.operato != "" {
+        if operato != "" {
             guard let disp = display.text,
-                let num1 = currentOp.num1
+                let num1 = num1
                 else { return }
             let num2 = Int(disp) ?? 0
             value1 = num1
             value2 = num2
+        }
+    }
+    //TODO: CLASS DisplayFuntions
+    //Implica dos clases. COperation CDisplay
+    func BtnPressed(btnPres: UIButton, isNill: Bool, display: UITextField) {
+        let btn = btnPres.tag
+        switch btn {
+        case 0:
+            ReturnValue(isNill: isNill, value: "0", display: display)
+            break;
+        case 1:
+            ReturnValue(isNill: isNill, value: "1", display: display)
+            break;
+        case 2:
+            ReturnValue(isNill: isNill, value: "2", display: display)
+            break;
+        case 3:
+            ReturnValue(isNill: isNill, value: "3", display: display)
+            break;
+        case 4:
+            ReturnValue(isNill: isNill, value: "4", display: display)
+            break;
+        case 5:
+            ReturnValue(isNill: isNill, value: "5", display: display)
+            break;
+        case 6:
+            ReturnValue(isNill: isNill, value: "6", display: display)
+            break;
+        case 7:
+            ReturnValue(isNill: isNill, value: "7", display: display)
+            break;
+        case 8:
+            ReturnValue(isNill: isNill, value: "8", display: display)
+            break;
+        case 9:
+            ReturnValue(isNill: isNill, value: "9", display: display)
+            break;
+        case 10: // AC
+            CleanOperator()
+            CleanDisplay(display: display)
+            break;
+        case 11: // +-
+            // Not implemented
+            break;
+        case 12: // percert
+            // Not implemented
+            break;
+        case 13: // /
+            SetPosValue(display: display, op: .division)
+            break;
+        case 14: //x
+            SetPosValue(display: display, op: .multiplicacion)
+            break;
+        case 15: // -
+            SetPosValue(display: display, op: .resta)
+            break;
+        case 16: // +
+            SetPosValue(display: display, op: .suma)
+            break;
+        case 17: // =
+            ExecOperation(display: display)
+            //ExecOperation(display: display)
+            break;
+        case 18: // .
+            if !DisContainDot(display: display) {
+                ReturnValue(isNill: isNill, value: "0.", display: display)
+            }
+            break;
+        default:
+            break;
         }
     }
 }

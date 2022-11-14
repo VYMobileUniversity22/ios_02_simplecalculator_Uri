@@ -16,4 +16,5 @@ class CDisplay{
             return true
         }
     }
+    
 }
