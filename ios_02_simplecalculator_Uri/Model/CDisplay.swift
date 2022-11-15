@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class CDisplay{
+struct CDisplay{
     func CheckDisplayCero (display: UILabel) -> Bool {
         if(display.text == "0") {
             return false

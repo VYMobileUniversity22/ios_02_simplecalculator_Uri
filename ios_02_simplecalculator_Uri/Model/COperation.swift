@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-//TODO: USE SINGLETON???????????????????????????
+//TODO: recieve from display in double straight
 enum operaciones: String {
     case suma = "+"
     case resta = "-"
@@ -17,7 +17,7 @@ enum operaciones: String {
     case none = "none"
 }
 
-class COperation {
+struct COperation {
     var num1: Int?
     var num2: Int?
     var operato: String = ""
@@ -25,13 +25,13 @@ class COperation {
     var cdisplay = CDisplay()
 
     //Set the operation to beginning
-    func CleanOperator() {
+    mutating func CleanOperator() {
         operato = ""
         num1 = nil
         num2 = nil
     }
     //Funtion for the first state of display
-    func CheckIniDisplay(display: UITextField, btnPress: UIButton) {
+    mutating func CheckIniDisplay(display: UITextField, btnPress: UIButton) {
         if display.text == "0" {
             BtnPressed(btnPres: btnPress, isNill: true, display: display)
         } else {
@@ -40,7 +40,7 @@ class COperation {
     }
     //TODO: Use variables of the class
     //Execute the operation
-    func ExecOperation(display: UITextField) {
+    mutating func ExecOperation(display: UITextField) {
         var value1 = 0
         var value2 = 0
         let operacion = operato
@@ -80,7 +80,7 @@ class COperation {
     }
     //TODO: Use variables of the class
     //If there is an value 1 set the operation parameter
-    func SetPosValue(display: UITextField, op: operaciones) {
+    mutating func SetPosValue(display: UITextField, op: operaciones) {
         guard let dis = display.text else { return }
 
         if operato == "" {
@@ -105,7 +105,7 @@ class COperation {
     }
     //TODO: CLASS DisplayFuntions
     //Implica dos clases. COperation CDisplay
-    func BtnPressed(btnPres: UIButton, isNill: Bool, display: UITextField) {
+    mutating func BtnPressed(btnPres: UIButton, isNill: Bool, display: UITextField) {
         let btn = btnPres.tag
         switch btn {
         case 0:
